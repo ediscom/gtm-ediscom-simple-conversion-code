@@ -1,5 +1,5 @@
 homepage: "https://www.ediscom.it"
 documentation: "https://www.ediscom.it"
 versions:
-  - sha: d9a225076132db4b33e254a9ee8541007551081b
+  - sha: e08abbda0b8c917b780494862e270692cf168005
     changeNotes: Initial release.
