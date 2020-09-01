@@ -1,5 +1,5 @@
 homepage: "https://www.ediscom.it"
-documentation: ""
+documentation: "https://www.ediscom.it"
 versions:
   - sha: d9a225076132db4b33e254a9ee8541007551081b
     changeNotes: Initial release.
