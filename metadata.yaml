@@ -1,5 +1,9 @@
 homepage: "https://www.ediscom.it"
 documentation: "https://www.ediscom.it"
 versions:
+  # Latest version
+  - sha: 0c92de1f1408596923838e28e0b4b515c9072fc6
+    changeNotes: Specific url for pixels.
+  # Older versions
   - sha: e08abbda0b8c917b780494862e270692cf168005
     changeNotes: Initial release.
