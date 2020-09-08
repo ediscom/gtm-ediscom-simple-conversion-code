@@ -14,7 +14,11 @@ ___INFO___
   "version": 1,
   "securityGroups": [],
   "displayName": "Ediscom Simple Conversion Code",
-  "categories": ["ADVERTISING", "MARKETING", "CONVERSIONS"],
+  "categories": [
+    "ADVERTISING",
+    "MARKETING",
+    "CONVERSIONS"
+  ],
   "brand": {
     "id": "github.com_ediscom",
     "displayName": "ediscom",
@@ -209,7 +213,19 @@ ___WEB_PERMISSIONS___
           "key": "allowedUrls",
           "value": {
             "type": 1,
-            "string": "any"
+            "string": "specific"
+          }
+        },
+        {
+          "key": "urls",
+          "value": {
+            "type": 2,
+            "listItem": [
+              {
+                "type": 1,
+                "string": "https://roi.ediscom.it/*"
+              }
+            ]
           }
         }
       ]
