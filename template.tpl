@@ -35,6 +35,45 @@ ___TEMPLATE_PARAMETERS___
 
 [
   {
+    "type": "SELECT",
+    "name": "domain_name",
+    "displayName": "Domain name",
+    "selectItems": [
+      {
+        "value": "roi.ediscom.it",
+        "displayValue": "roi.ediscom.it"
+      },
+      {
+        "value": "clk.espotter.info",
+        "displayValue": "clk.espotter.info"
+      },
+      {
+        "value": "showmetheresource.com",
+        "displayValue": "showmetheresource.com"
+      },
+      {
+        "value": "cla.mega-offerte.net",
+        "displayValue": "cla.mega-offerte.net"
+      },
+      {
+        "value": "pda.super-offerta.com",
+        "displayValue": "pda.super-offerta.com"
+      },
+      {
+        "value": "informazionienovita.it",
+        "displayValue": "informazionienovita.it"
+      }
+    ],
+    "simpleValueType": true,
+    "help": "Domain name provided in setup phase by Ediscom account",
+    "defaultValue": "roi.ediscom.it",
+    "valueValidators": [
+      {
+        "type": "NON_EMPTY"
+      }
+    ]
+  },
+  {
     "type": "TEXT",
     "name": "campaign_id",
     "displayName": "Campaign ID",
@@ -165,10 +204,11 @@ const encodeUriComponent = require('encodeUriComponent');
 const sendPixel = require('sendPixel');
 
 //My pixel url template
-const baseUrlTemplate = 'https://roi.ediscom.it/v2/az[action_number][campaign_id]/';
+const baseUrlTemplate = 'https://[domain_name]/v2/az[action_number][campaign_id]/';
 
 //Url specific customization
 let baseUrl = baseUrlTemplate;
+baseUrl = baseUrl.replace('[domain_name]', data.domain_name);
 baseUrl = baseUrl.replace('[action_number]', makeNumber(data.action_number));
 baseUrl = baseUrl.replace('[campaign_id]', makeNumber(data.campaign_id));
 if (data.order_id){
@@ -224,6 +264,26 @@ ___WEB_PERMISSIONS___
               {
                 "type": 1,
                 "string": "https://roi.ediscom.it/*"
+              },
+              {
+                "type": 1,
+                "string": "https://clk.espotter.info/*"
+              },
+              {
+                "type": 1,
+                "string": "https://showmetheresource.com/*"
+              },
+              {
+                "type": 1,
+                "string": "https://cla.mega-offerte.net/*"
+              },
+              {
+                "type": 1,
+                "string": "https://pda.super-offerta.com/*"
+              },
+              {
+                "type": 1,
+                "string": "https://informazionienovita.it/*"
               }
             ]
           }
